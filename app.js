@@ -9,6 +9,9 @@ var swaggerJSDoc = require('swagger-jsdoc');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+//Loading environment variables from .env
+require('dotenv').config();
+
 var app = express();
 //Swagger definitions
 var swaggerDefinition = {
@@ -61,7 +64,6 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handler: serving up json format
 // error handler: serving up json format
 if (app.get('env') === 'development') {
   //Will print the stack trace
