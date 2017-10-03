@@ -4,11 +4,40 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var swaggerJSDoc = require('swagger-jsdoc');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+//Swagger definitions
+var swaggerDefinition = {
+  info: {
+    title: 'API Description',
+    version: '1.0.0',
+    description: 'API description using swagger.',
+  },
+  host: 'localhost:3000',
+  basePath: '/',
+};
+
+//Swagger options
+var options = {
+  //import swagger definitions
+  swaggerDefinition: swaggerDefinition,
+  //path to the API docs
+  apis: ['./routes/*.js'],
+};
+
+//Initializa swagger
+var swaggerSpec = swaggerJSDoc(options);
+
+//Servine swagger docs
+app.get('/swagger.json', function(req, res) {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(swaggerSpec);
+});
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
