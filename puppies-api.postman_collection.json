@@ -1,0 +1,162 @@
+{
+	"variables": [],
+	"info": {
+		"name": "puppies-api",
+		"_postman_id": "cb113c38-6b24-76f1-a80c-a50fca10f71c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/api/puppies/",
+			"request": {
+				"url": "http://localhost:3000/api/puppies",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Lyla",
+							"description": "Name",
+							"type": "text"
+						},
+						{
+							"key": "breed",
+							"value": "annoying",
+							"description": "Breed",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "3",
+							"description": "Age",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "M",
+							"description": "Sex",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Get all puppies"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/puppies/10",
+			"request": {
+				"url": "http://localhost:3000/api/puppies/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get specific puppy"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/puppies/",
+			"request": {
+				"url": "http://localhost:3000/api/puppies",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Layla",
+							"description": "Name",
+							"type": "text"
+						},
+						{
+							"key": "breed",
+							"value": "annoying",
+							"description": "Breed",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "3",
+							"description": "Age",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "M",
+							"description": "Sex",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Add new puppy"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/puppies/1",
+			"request": {
+				"url": "http://localhost:3000/api/puppies/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Hunter",
+							"description": "Name",
+							"type": "text"
+						},
+						{
+							"key": "breed",
+							"value": "Cool",
+							"description": "Breed",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "5",
+							"description": "Age",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "M",
+							"description": "Sex",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Update a specif puppy"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/puppies/2",
+			"request": {
+				"url": "http://localhost:3000/api/puppies/2",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "Delete a puppy"
+			},
+			"response": []
+		}
+	]
+}
