@@ -14,6 +14,7 @@ Using:
 ## To Do
 
 - Refactor the project structure.
+- Make the API more secure by using Helmet.js !important
 - Check the configs to separate from the app's logic (12 factor app guidelines)
 - Add Tests - Will use Jest probably. (Should have started this way since the beginning :-)
 - Add authentication using JWT
