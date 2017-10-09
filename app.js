@@ -1,4 +1,5 @@
 var express = require('express');
+var helmet = require('helmet');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -34,6 +35,9 @@ var options = {
 
 //Initializa swagger
 var swaggerSpec = swaggerJSDoc(options);
+
+//Adding Helmet middleware to make headers more secure
+app.use(helmet());
 
 //Servine swagger docs
 app.get('/swagger.json', function(req, res) {
