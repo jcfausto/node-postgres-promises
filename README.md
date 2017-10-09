@@ -16,7 +16,7 @@ Using:
 
 - Refactor the project structure.
 - ~~Make the API more secure by using Helmet.js !important~~
-- Check the configs to separate from the app's logic (12 factor app guidelines)
+- ~~Check the configs to separate from the app's logic (12 factor app guidelines)~~
 - Add Tests - Will use Jest probably. (Should have started this way since the beginning :-)
 - Add authentication using JWT
 - Containerize the app to run on Docker (including being able to run the tests on Docker)
