@@ -7,13 +7,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var swaggerJSDoc = require('swagger-jsdoc');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-
 //Loading environment variables from .env
 require('dotenv').config();
 
+var index = require('./routes/index');
+var users = require('./routes/users');
+
 var app = express();
+
 //Swagger definitions
 var swaggerDefinition = {
   info: {
@@ -21,8 +22,8 @@ var swaggerDefinition = {
     version: '1.0.0',
     description: 'API description using swagger.',
   },
-  host: 'localhost:3000',
-  basePath: '/',
+  host: process.env.APP_HOST,
+  basePath: process.env.APP_BASE_PATH,
 };
 
 //Swagger options
@@ -39,7 +40,7 @@ var swaggerSpec = swaggerJSDoc(options);
 //Adding Helmet middleware to make headers more secure
 app.use(helmet());
 
-//Servine swagger docs
+//Serving swagger docs
 app.get('/swagger.json', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.send(swaggerSpec);

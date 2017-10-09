@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 //To get access to our db functions
-var db = require('../queries');
+var db = require('../src/server/db/queries');
 
 /**
 * @swagger

@@ -1,8 +1,15 @@
+const dbConfig = {
+  DATABASE_URL: process.env.DATABASE_URL,
+  DATABASE_NAME: process.env.DATABASE_NAME,
+  DATABASE_USER: process.env.DATABASE_USER,
+  DATABASE_PASS: process.env.DATABASE_PASS
+};
+
 module.exports = {
 
   development: {
     client: 'postgresql',
-    connection: 'postgres://localhost:5432/puppies_dev',
+    connection: dbConfig.DATABASE_URL+dbConfig.DATABASE_NAME+'_dev',
     migrations: {
       directory: __dirname + '/src/server/db/migrations'
     },
@@ -13,7 +20,7 @@ module.exports = {
 
   test: {
     client: 'postgresql',
-    connection: 'postgres://localhost:5432/puppies_testing',
+    connection: dbConfig.DATABASE_URL+dbConfig.DATABASE_NAME+'_testing',
     migrations: {
       directory: __dirname + '/src/server/db/migrations'
     },
@@ -25,9 +32,9 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'puppies',
-      user:     'appdbuser',
-      password: 'appdbuserpassword'
+      database: dbConfig.DATABASE_NAME,
+      user:     dbConfig.DATABASE_USER,
+      password: dbConfig.DATABASE_PASS
     },
     pool: {
       min: 2,

@@ -2,7 +2,7 @@
 //I want to use transactions
 //var promise = require('bluebird');
 
-var knex = require('./src/server/db/knex');
+var knex = require('./knex');
 
 //Return all puppies
 function getAllPuppies(req, res, next) {
